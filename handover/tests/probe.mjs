@@ -1,5 +1,5 @@
 import http from 'node:http'; import fs from 'node:fs'; import { spawn } from 'node:child_process';
-const DIR='new URL('.', import.meta.url).pathname';
+const DIR = new URL('.', import.meta.url).pathname;
 const PORT=8761, CDP=9363;
 const server=http.createServer((_,res)=>{res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.end(fs.readFileSync(process.env.QB_FILE || new URL('../../index.html', import.meta.url).pathname));});
 await new Promise(r=>server.listen(PORT,'127.0.0.1',r));

@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 
-const DIR = 'new URL('.', import.meta.url).pathname';
+const DIR = new URL('.', import.meta.url).pathname;
 const FILE = process.env.QB_FILE || new URL('../../index.html', import.meta.url).pathname;
 const PORT = 8731;
 const CDP_PORT = 9333;

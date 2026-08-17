@@ -3,7 +3,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import { spawn } from 'node:child_process';
 
-const DIR = 'new URL('.', import.meta.url).pathname';
+const DIR = new URL('.', import.meta.url).pathname;
 const FILE = process.env.QB_FILE || new URL('../../index.html', import.meta.url).pathname;
 const PORT = 8741, CDP = 9343;
 
